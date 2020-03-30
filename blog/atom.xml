@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="http://docs.latamlink.io//blog"/>
     <subtitle>The best place to stay up-to-date with the latest LatamLink Testnet news and events.</subtitle>
-    <logo>http://docs.latamlink.io//img/favicon.ico</logo>
+    <logo>http://docs.latamlink.io//img/latamlink_logo-h-full-color-overwhite.svg</logo>
     <rights>Copyright © 2020 LatamLink</rights>
     <entry>
         <title type="html"><![CDATA[New Version 1.0.0]]></title>

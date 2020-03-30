@@ -9,7 +9,7 @@
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
             <title>LatamLink Testnet Blog</title>
-            <url>http://docs.latamlink.io//img/favicon.ico</url>
+            <url>http://docs.latamlink.io//img/latamlink_logo-h-full-color-overwhite.svg</url>
             <link>http://docs.latamlink.io//blog</link>
         </image>
         <copyright>Copyright © 2020 LatamLink</copyright>
