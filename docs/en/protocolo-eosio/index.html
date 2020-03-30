@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Protocolo EOSIO · LatamLink Testnet</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Una cadena de bloques basada en el protocolo [EOSIO](https://eos.io) tiene una arquitectura flexible, en la que la mayoría de las reglas de operación se definen a través de los contratos del sistema. "/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Protocolo EOSIO · LatamLink Testnet"/><meta property="og:type" content="website"/><meta property="og:url" content="http://docs.latamlink.io//"/><meta property="og:description" content="Una cadena de bloques basada en el protocolo [EOSIO](https://eos.io) tiene una arquitectura flexible, en la que la mayoría de las reglas de operación se definen a través de los contratos del sistema. "/><meta property="og:image" content="http://docs.latamlink.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://docs.latamlink.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="http://docs.latamlink.io/blog/atom.xml" title="LatamLink Testnet Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="http://docs.latamlink.io/blog/feed.xml" title="LatamLink Testnet Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/favicon.ico" alt="LatamLink Testnet"/><h2 class="headerTitleWithLogo">LatamLink Testnet</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/en/como-iniciar" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/docs/en/api" target="_self">APIs</a></li><li class=""><a href="/en/ayuda" target="_self">Ayuda</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/es-ES/protocolo-eosio">Español</a></li><li><a href="/docs/pt-BR/protocolo-eosio">Português (Brasil)</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>LatamLink</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">LatamLink</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/protocolo-eosio">Protocolo EOSIO</a></li><li class="navListItem"><a class="navItem" href="/docs/en/topologia-red">Topología de Red</a></li><li class="navListItem"><a class="navItem" href="/docs/en/recursos">Recursos</a></li><li class="navListItem"><a class="navItem" href="/docs/en/interoperabilidad">Interoperabilidad</a></li><li class="navListItem"><a class="navItem" href="/docs/en/privacidad">Privacidad</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tutoriales</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/como-iniciar">Como Iniciar</a></li><li class="navListItem"><a class="navItem" href="/docs/en/llaves-privadas">Manejo de Llaves Privadas</a></li><li class="navListItem"><a class="navItem" href="/docs/en/hola-mundo">Contrato Hola Mundo</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Herramientas</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/explorador-bloques">Explorador de Bloques</a></li><li class="navListItem"><a class="navItem" href="/docs/en/monitor">Monitor de Red</a></li><li class="navListItem"><a class="navItem" href="/docs/en/api">APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/en/cli">Línea de Commando</a></li><li class="navListItem"><a class="navItem" href="/docs/en/eos-js">EOS JS</a></li><li class="navListItem"><a class="navItem" href="/docs/en/respaldos">Respaldos y Snapshots</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Recursos</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/portal-aprendizaje">Portal de Aprendizaje</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Protocolo EOSIO</h1></header><article><div><span><p>Una cadena de bloques basada en el protocolo <a href="https://eos.io">EOSIO</a> tiene una arquitectura flexible, en la que la mayoría de las reglas de operación se definen a través de los contratos del sistema.</p>
+<p>La empresa block.one lanzó el protocolo EOSIO que usa el mecanismo de consenso conocido como “Delegated Proof-of-Stake” (dPOS). Este mecanismo fue diseñado para incluir un proceso de elecciones y así descentralizar la gestión de la red. Es posible pensar en dPOS como una implementación de democracia basada en la tecnología.</p>
+<p>El protocolo dPOS define los contratos de sistema como una librería de código escrito en C++. Los contratos de sistema constituyen un módulo separado del sistema base de EOSIO. De esta forma, las funciones centrales de los nodos y el mecanismo de consenso de bloques se mantiene aparte de los contratos de sistema.</p>
+<p>Estos contratos de sistema permiten a las redes EOSIO:</p>
+<ul>
+<li>Tener reglas transparentes de operación del sistema.</li>
+<li>Configurar fácilmente la gobernanza de la red mediante contratos inteligentes.</li>
+<li>Mantener la compatibilidad total con otras cadenas de bloques EOSIO.</li>
+<li>Sincronizar los cambios en las reglas de operación de forma instantánea en toda la red, lo que reduce la administración y los costos de las actualizaciones de gobernanza.</li>
+</ul>
+<p>El objetivo de Latam Link es implementar el testnet de EOSIO para LACChain y demostrar la flexibilidad de esta tecnología para configurar los contratos de sistema. Además, se quiere comparar la implementación de esquemas Proof-of-Authority (POA) y dPOS en una blockchain pública permisionada. Esta comparación permitirá demostrar las diferencias de designación de actores que gestionan la red de forma autoritaria en vez de seguir lineamientos democráticos.</p>
+<p>Por consiguiente, la intención es no utilizar la funcionalidad de votos nativa del protocolo EOSIO. Además, se eliminará el uso de tokens (o criptomonedas) para determinar los custodios de la red (productores de bloques). En cambio, se asignarán los custodios de la red mediante una autoridad central derivada del conjunto de productores de bloques designados mediante aprobaciones multifirmas (multisig). Para lograr esta metodología, se implementarán contratos que requieran del consenso del grupo mediante la aprobación de la mayoría simple, es decir, que se junten los votos de la mitad de los productores de bloques más uno adicional como mínimo.</p>
+<h2><a class="anchor" aria-hidden="true" id="modificaciones-a-contratos-de-sistema-eosio"></a><a href="#modificaciones-a-contratos-de-sistema-eosio" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Modificaciones a Contratos de Sistema EOSIO</h2>
+<p>Se dispondrá de una modificación en el sistema de validación de contratos o “system contract validations” (este es un fork de los contratos de la empresa block.one). Por ejemplo ver los siguientes <a href="https://github.com/theblockstalk/eosio-contracts/tree/governance/governance/POA/include">contratos de sistema</a> modificados POA para EOSIO.</p>
+<p>Además, se eliminará el uso de tokens y de votos característicos del protocolo EOSIO. Es decir, al momento de girar recursos, no será necesario disponer de ningún token. Esta funcionalidad no necesariamente se eliminará, sino que se utilizará una función de “assert false” para deshabilitar las funciones ya que la plataforma no soporta estas funciones.</p>
+<p>Funciones deshabilitadas:</p>
+<ul>
+<li>Token de Sistema</li>
+<li>Votos por Productores de Bloques</li>
+<li>Pago de Productores de Bloques</li>
+<li>&quot;Staking&quot; para recursos</li>
+<li>Delegación de Recursos</li>
+<li>Namebiding</li>
+<li>Rex</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="cuenta-privilegiada-system"></a><a href="#cuenta-privilegiada-system" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cuenta privilegiada &quot;system&quot;</h2>
+<p>Se fijará una cuenta compuesta por el grupo de productores de bloques que represente la autoridad máxima de la red. Esta cuenta podrá ejecutar cualquier acción en la red y poseer acceso ilimitado a los recursos. Es decir, se podrá iniciar una cadena de bloques con un solo nodo (bios node) que puede agregar otros nodos a la tabla de productores de bloques. Este nodo podrá determinar cuáles cuentas pueden compartir la responsabilidad de producir bloques nuevos en la cadena.</p>
+<p>Asimismo, se utilizará un contrato multifirma (o “multisig”) con parámetros variables que requerirá el consentimiento de la mayoría de los productores en la tabla. Esta cuenta privilegiada se denominará la cuenta “system”.</p>
+<p>Se propone una función multisig para agregar un block producer. Para añadir otro productor de bloques, solo se requiere una firma. Sin embargo, luego requerirán dos firmas. Después, tres firmas, y así seguidamente.</p>
+<table>
+<thead>
+<tr><th># Productores</th><th>Firmas Requeridas</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>1/1</td></tr>
+<tr><td>2</td><td>2/2</td></tr>
+<tr><td>3</td><td>2/3</td></tr>
+<tr><td>4</td><td>3/4</td></tr>
+<tr><td>5</td><td>3/5</td></tr>
+</tbody>
+</table>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-next button" href="/docs/en/topologia-red"><span>Topología de Red</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#modificaciones-a-contratos-de-sistema-eosio">Modificaciones a Contratos de Sistema EOSIO</a></li><li><a href="#cuenta-privilegiada-system">Cuenta privilegiada &quot;system&quot;</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.ico" alt="LatamLink Testnet" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 LatamLink</section></footer></div></body></html>
