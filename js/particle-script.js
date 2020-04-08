@@ -1,5 +1,5 @@
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-particlesJS.load("particles-js", "../other/particles.json", function() {});
+particlesJS.load("particles-js", "other/particles.json", function() {});
 $(document).ready(function() {
   $("#more").click(function() {
     $("html,body").animate(
