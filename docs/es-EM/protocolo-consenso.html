@@ -1,0 +1,151 @@
+<!DOCTYPE html><html lang="es-EM"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Mecanismo de Consenso · LatamLink Testnet</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="El mecanismo de consenso asegura que cada nuevo bloque que se agrega al Blockchain sea la única versión de la verdad acordada por todos los nodos en la red. Por lo tanto, un algoritmo de consenso tiene como objetivo encontrar un acuerdo común que sea una aceptado por toda la red."/><meta name="docsearch:language" content="es-EM"/><meta property="og:title" content="Mecanismo de Consenso · LatamLink Testnet"/><meta property="og:type" content="website"/><meta property="og:url" content="https://latamlink.io//"/><meta property="og:description" content="El mecanismo de consenso asegura que cada nuevo bloque que se agrega al Blockchain sea la única versión de la verdad acordada por todos los nodos en la red. Por lo tanto, un algoritmo de consenso tiene como objetivo encontrar un acuerdo común que sea una aceptado por toda la red."/><meta property="og:image" content="https://latamlink.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://latamlink.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://latamlink.io/blog/atom.xml" title="LatamLink Testnet Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://latamlink.io/blog/feed.xml" title="LatamLink Testnet Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/es-EM"><img class="logo" src="/img/latamlink_logo-h-full-color-overwhite.svg" alt="LatamLink Testnet"/><h2 class="headerTitleWithLogo">LatamLink Testnet</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/es-EM/eosio" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/docs/es-EM/api" target="_self">APIs</a></li><li class=""><a href="/es-EM/ayuda" target="_self">Ayuda</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>Español</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/protocolo-consenso">English</a></li><li><a href="/docs/pt-BR/protocolo-consenso">Português (Brasil)</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Testnet</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Testnet</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/es-EM/eosio">Protocolo EOSIO</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/es-EM/protocolo-consenso">Mecanismo de Consenso</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/topologia-red">Topología de Red</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/monitoreo">Monitoreo de Red</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/recursos">Recursos de Sistema</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/rendimiento">Rendimiento y Seguridad</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/cuentas-permisos">Cuentas y Permisos</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/digital-identity">Identidad Digital</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/privacidad">Privacidad</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/interoperabilidad">Interoperabilidad</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/roadmap">Roadmap</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Guías</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/es-EM/como-iniciar">Como Iniciar</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/llaves-privadas">Llaves Privadas</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/instalacion-nodos">Instalación de Nodos</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/hola-mundo">Contrato Hola Mundo</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Herramientas</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/es-EM/monitor">Monitor de Red</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/gestion-red">Gestión de Red</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/explorador-bloques">Explorador de Bloques</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/api">APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/cli">Línea de Comando</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/eos-js">EOS JS</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/respaldos">Respaldos y Snapshots</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Recursos</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/es-EM/otros-recursos">Portal de Aprendizaje</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/redes-eosio">Redes EOSIO</a></li><li class="navListItem"><a class="navItem" href="/docs/es-EM/glosario">Glosario de Términos</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/LatamLink/documentacion/edit/master/docs/protocolo-consenso.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Mecanismo de Consenso</h1></header><article><div><span><p>El mecanismo de consenso asegura que cada nuevo bloque que se agrega al Blockchain sea la única versión de la verdad acordada por todos los nodos en la red. Por lo tanto, un algoritmo de consenso tiene como objetivo encontrar un acuerdo común que sea una aceptado por toda la red.</p>
+<p>En el caso de LatamLink existe un grupo de nodos que poseen la autoridad de validar transacciones y escribir estas transacciones dentro de bloques nuevos. A estos nodos los denominaremos <strong>Productores de Bloques</strong>.</p>
+<h2><a class="anchor" aria-hidden="true" id="proof-of-authority-poa"></a><a href="#proof-of-authority-poa" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Proof of Authority (POA)</h2>
+<p>El grupo de productores de bloques poseen la autoridad de escribir a la cadena de bloques porque fueron otorgados este privilegio por parte de la  autoridad superior, el comité permisionador, quien sera la máxima autoridad y quien determina cuales serán los nodos productores de bloques.</p>
+<p>Cualquiera que cumpla con un mínimo de requisitos técnicos puede aplicar para ser escritor o validador.</p>
+<h2><a class="anchor" aria-hidden="true" id="productores-de-bloques-activos"></a><a href="#productores-de-bloques-activos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Productores de Bloques Activos</h2>
+<p>Se define un número fijo adecuado de nodos activos</p>
+<ul>
+<li>Hasta <strong>125 productores de bloque activos</strong>, especificados mediante  <code>max_producers</code> en <a href="https://github.com/EOSIO/eos/blob/master/libraries/chain/include/eosio/chain/config.hpp#L106">config.hpp</a></li>
+</ul>
+<p>Los nodos productores de bloques pertenecen a un grupo que comparte la responsabilidad de validar y escribir todas las acciones en la red.</p>
+<p>Son capaces de reconocer las firmas de los nodos escritores y verificar que las transacciones hayan sido transmitidas a la red por nodos escritores autorizados en el contrato inteligente para su autorización.</p>
+<p>Este grupo se organiza en un lista en orden alfabético.</p>
+<p>Los bloques nuevos son producidos por el primer nodo  en la lista durante un periodo de 6 segundos (12 bloques) y luego pasa el siguiente nodo a producir los siguientes 12 bloques y así sucesivamente.</p>
+<h3><a class="anchor" aria-hidden="true" id="rotación-de-nodos-activos"></a><a href="#rotación-de-nodos-activos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rotación de nodos activos</h3>
+<ul>
+<li><p>Se habilita una rotación basada en contratos inteligentes (aleatorio) sin poder predecir quienes sean (entropia externa)</p></li>
+<li><p>Los nodos también se rotan periódicamente en función de la descentralización y el rendimiento. Semanal?</p></li>
+<li><p>Los nodos activos y de respaldo pueden cambiarse automáticamente cuando se detectan fallas de funcionamiento.</p></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="irreversabilidad-de-bloques"></a><a href="#irreversabilidad-de-bloques" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Irreversabilidad de Bloques</h3>
+<p>Los bloques no se consideran irreversibles en la cadena de hasta que hayan sido validadas por 2/3 +1 de los productores activos. De tal manera que si un productor del grupo inserta una transacción invalida los nodos siguientes validaran las transacciones y no serán incluidas sin que 2/3 +1 hayn validado ese bloques.</p>
+<h2><a class="anchor" aria-hidden="true" id="productores-de-respaldo"></a><a href="#productores-de-respaldo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Productores de Respaldo</h2>
+<ul>
+<li>Si hay un problema de rendimiento entrando en un nodo de respaldo</li>
+<li>Mediante una métricas objetivas de rendimiento.</li>
+</ul>
+<p>automatico o manual ?</p>
+<ul>
+<li>Contratos inteligentes del oráculo</li>
+<li>Comité permisionador</li>
+</ul>
+<p>Se requiere definir numero optimo de nodos backup.</p>
+<h2><a class="anchor" aria-hidden="true" id="trazabilidad-de-nodos"></a><a href="#trazabilidad-de-nodos" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Trazabilidad de nodos</h2>
+<p>Los nodos sean capaces de reconocer a través de que nodo ha entrado la transacciones a la red , broadcasters de transacciones (Full Nodes)</p>
+<p>Verificar que la transacción fue emitida por un nodo que esté permisionado .</p>
+<p>Esta trazabilidad posiblemente requiera modificar la estructura de la transacción para incluir la firma del nodo.</p>
+<p>(actualmente esto no se permite en BESU IBFT 2) (problema de bloque vacios)</p>
+<p>No se puede verificar quien es el nodo validador que puede escribir.</p>
+<ul>
+<li>Quien maneja esa lista?</li>
+</ul>
+<p>Hoy en día, no se puede rastrear qué nodo de escritor generó esa transacción, por lo que no es posible hacerlos legalmente responsables de ella.</p>
+<h2><a class="anchor" aria-hidden="true" id="comité-permisionador"></a><a href="#comité-permisionador" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Comité permisionador</h2>
+<p>Evalua entidades que quieren ser validadores (BID)</p>
+<p>Eventualmemte habra un vehiculo legal, quien verifica identidad y firma contratos con productores de bloques.</p>
+<p>Esta autoridad central podrá ser derivada de un conjunto de actores mediante aprobaciones multifirmas (multisig) de tal manera que se requieran del consenso del grupo mediante la aprobación de la mayoria simple, es decir, que se junten los votos de la mitad de los actores más uno adicional como mínimo.</p>
+<ul>
+<li>Comité permisionador que tengo el menor intervención posible  . Sin embrago para una red publica permisionada se requiere.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="contratos-de-sistema"></a><a href="#contratos-de-sistema" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Contratos de Sistema</h2>
+<p>Se dispone el mecanismo de validación para LAC-Chain mediante contratos de sistema personalizados. Para esto nos basaremos en los contratos de sistema nativos de EOSIO.  cambio es un cambio de DPOS a POA de LAC-Chain</p>
+<p>Este cambio implica deshabilitar el uso de tokens y de votos característicos del protocolo DPOS. Es decir, al momento de girar recursos, no será necesario disponer de ningún token. Esta funcionalidad no necesariamente se eliminará, sino que se utilizará una función de “assert false” para deshabilitar las funciones ya que la plataforma no soporta estas funciones.</p>
+<p>Funciones deshabilitadas:</p>
+<ul>
+<li>Token de sistema</li>
+<li>Votos por Productores de Bloques</li>
+<li>Pago de Productores de Bloques</li>
+<li>&quot;Staking&quot; para recursos</li>
+<li>Delegación de Recursos</li>
+<li>Nombramiento</li>
+<li>Rex</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/es-EM/eosio"><span class="arrow-prev">← </span><span>Protocolo EOSIO</span></a><a class="docs-next button" href="/docs/es-EM/topologia-red"><span>Topología de Red</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#proof-of-authority-poa">Proof of Authority (POA)</a></li><li><a href="#productores-de-bloques-activos">Productores de Bloques Activos</a><ul class="toc-headings"><li><a href="#rotación-de-nodos-activos">Rotación de nodos activos</a></li><li><a href="#irreversabilidad-de-bloques">Irreversabilidad de Bloques</a></li></ul></li><li><a href="#productores-de-respaldo">Productores de Respaldo</a></li><li><a href="#trazabilidad-de-nodos">Trazabilidad de nodos</a></li><li><a href="#comité-permisionador">Comité permisionador</a></li><li><a href="#contratos-de-sistema">Contratos de Sistema</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/footerlogo.png" alt="LatamLink Testnet"/></a><div><h5>Documentación</h5><a href="/docs/es-EM/doc1.html">Como Iniciar</a><a href="/docs/es-EM/doc2.html">Guías</a><a href="/docs/es-EM/doc3.html">APIs</a></div><div><h5>Comunidad</h5><a href="/es-EM/users.html">Usuarios</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://t.me/">Telegram Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>Más</h5><a href="/blog">Blog</a><a href="https://github.com/LatamLink">GitHub</a><a class="github-button" href="https://github.com/LatamLink" data-icon="octicon-star" data-count-href="/LatamLink/documentacion" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/EOSCostaRica" class="twitter-follow-button">Follow @EOSCostaRica</a></div></div></section><section class="copyright">Copyright © 2020 LatamLink</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f7e83f64ca037b5315b5ccd56f79910c',
+                indexName: 'latamlink',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
