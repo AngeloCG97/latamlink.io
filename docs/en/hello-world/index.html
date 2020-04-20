@@ -1,0 +1,115 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Hello World Contract · LatamLink Testnet</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="We explain by example how to create an account and a &quot;Hello World&quot; contract to upload to a EOS.IO based blockchain. For this example, we based on the resources published by [Block.one to share with the community](http://developers.eos.io/)."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Hello World Contract · LatamLink Testnet"/><meta property="og:type" content="website"/><meta property="og:url" content="https://latamlink.io//"/><meta property="og:description" content="We explain by example how to create an account and a &quot;Hello World&quot; contract to upload to a EOS.IO based blockchain. For this example, we based on the resources published by [Block.one to share with the community](http://developers.eos.io/)."/><meta property="og:image" content="https://latamlink.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://latamlink.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/latamlink_logo-h-full-color-overwhite.svg" alt="LatamLink Testnet"/><h2 class="headerTitleWithLogo">LatamLink Testnet</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/en/eosio" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/docs/en/api" target="_self">APIs</a></li><li class=""><a href="/en/ayuda" target="_self">Help</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/es-EM/hello-world">Español</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Guides</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Testnet</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/eosio">EOSIO Protocol</a></li><li class="navListItem"><a class="navItem" href="/docs/en/consensus-mechanism">Consensus Mechanism</a></li><li class="navListItem"><a class="navItem" href="/docs/en/network-topology">Network Topology</a></li><li class="navListItem"><a class="navItem" href="/docs/en/monitoring">Network monitoring</a></li><li class="navListItem"><a class="navItem" href="/docs/en/system-resources">System Resources</a></li><li class="navListItem"><a class="navItem" href="/docs/en/performance">Security and Performance</a></li><li class="navListItem"><a class="navItem" href="/docs/en/accounts-permissions">Accounts and Permissions</a></li><li class="navListItem"><a class="navItem" href="/docs/en/digital-identity">Digital Identity</a></li><li class="navListItem"><a class="navItem" href="/docs/en/privacy">Privacy</a></li><li class="navListItem"><a class="navItem" href="/docs/en/interoperability">Interoperability</a></li><li class="navListItem"><a class="navItem" href="/docs/en/roadmap">Roadmap</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Guides</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/getting-started">Getting Started</a></li><li class="navListItem"><a class="navItem" href="/docs/en/private-keys">Private Keys</a></li><li class="navListItem"><a class="navItem" href="/docs/en/node-installation">Node Installation</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/hello-world">Hello World Contract</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Tools</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/monitor">Network monitor</a></li><li class="navListItem"><a class="navItem" href="/docs/en/network-governance">Network Governance</a></li><li class="navListItem"><a class="navItem" href="/docs/en/block-explorer">Block Explorer</a></li><li class="navListItem"><a class="navItem" href="/docs/en/api">APIs</a></li><li class="navListItem"><a class="navItem" href="/docs/en/cli">Command Line</a></li><li class="navListItem"><a class="navItem" href="/docs/en/eos-js">EOS JS</a></li><li class="navListItem"><a class="navItem" href="/docs/en/backups">Snapshots and backups</a></li><li class="navListItem"><a class="navItem" href="/docs/en/boilerplate">dAPP Boilerplate</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Resources</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/other-resources">Learning Portal</a></li><li class="navListItem"><a class="navItem" href="/docs/en/eosio-networks">EOSIO Networks</a></li><li class="navListItem"><a class="navItem" href="/docs/en/glossary">Glossary of Terms</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://github.com/LatamLink/latamlink.io/edit/master/docs/hello-world.md" target="_blank" rel="noreferrer noopener">Edit</a><h1 id="__docusaurus" class="postHeaderTitle">Hello World Contract</h1></header><article><div><span><p>We explain by example how to create an account and a &quot;Hello World&quot; contract to upload to a EOS.IO based blockchain. For this example, we based on the resources published by <a href="http://developers.eos.io/">Block.one to share with the community</a>.</p>
+<h2><a class="anchor" aria-hidden="true" id="get-your-private-keys"></a><a href="#get-your-private-keys" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Get your private keys</h2>
+<p>More information <a href="llaves-privadas.md">about private keys</a></p>
+<h2><a class="anchor" aria-hidden="true" id="acquire-ram-resource"></a><a href="#acquire-ram-resource" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Acquire RAM resource</h2>
+<p>Once you have the account on LatamLink Testnet, we can use the Faucet to receive dummy tokens for free, that in this case will be EOS, necessary to use network resources (as long as we have participation on that network). The sense of that is, for the contract, we will be requiring to acquire RAM resources of the block producers, for which that we will need these EOS that were just sent to us.</p>
+<p>With this command, we can check the EOS quantity we have in this account (which in this case are 100 EOS), as well as the RAM resource, which at this moment is 5.366 KiB.</p>
+<p>In this scenario, we are connected to a remote URL through a LatamLink API endpoint to extract the account information.</p>
+<p>To acquire RAM, we write the command <code>buyram</code> for our account. We must specify twice the name of the account, once to define where the EOS come out and again to indicate where to RAM is sent. In the same line, we must indicate the EOS quantity we will be providing. For this example, we are sending 50 EOS. By having the wallet unlocked, automatically we acquired the RAM for the amount of EOS that we indicated.</p>
+<p>After executing the buy, we can verify that now we have 86 KiB of RAM and just 50 EOS of the 100 that originally were assigned to us.</p>
+<p>In the Bloks.io explorer, we can search for the information in that account. Additionally, we can review the taken actions, including the RAM buy transactions, the Faucet tokens and the complete history of movements.</p>
+<h2><a class="anchor" aria-hidden="true" id="create-a-contract"></a><a href="#create-a-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create a contract</h2>
+<p>To continue, let's create a simple contract inside a new directory, which we call &quot;hellocontract&quot;. As resources are needed on EOS, these should be associated with the account tokens, so first should put the same contract name previously created.</p>
+<p>To edit the contract, a text editor can be used. For this example, Sublime Text was used.</p>
+<p>The first line includes a library in which we have access through the Contract Development Kit (CDT), a tool that allows access to resources to create the contracts.</p>
+<p>In the class line, our &quot;hellocontract&quot; contract should be exposed, which has an action defined, which in this case we call it &quot;hello&quot; and its argument is a user of the type name. Upon saving the contract, is left a C++ in the directory.</p>
+<p>The C++ file needs to be compiled using the tool CDT (Contract Development Toolkit), that receives as input the C++ file and as output originates a web assembly (warm) file which is an executable file by the contract. Additionally to the wasm file, an abi file is also generated which functions for mapping the contract functions. The command is going to receive the contract as input and as output is going to generate a wasm file which is the file that is uploaded on the blockchain.</p>
+<p>As we didn't specify one, the system give us a message that there is no Ricardian clause. A Ricardian clause is a contract in prose, written in English, that describes the intention of the contract and should be aligned with the intention for which it was created. In the Block.one's site are resources for the Ricardian clauses. For the purposes of the example, we don't create one.</p>
+<p>Once the command has been executed for the set contract, the system reads the information in the contract and then publish it.</p>
+<h2><a class="anchor" aria-hidden="true" id="publish-the-contract"></a><a href="#publish-the-contract" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Publish the Contract</h2>
+<p>Once the contract is ready, let's publish in the LatamLink Testnet account. To publish our contract, we should use the <code>cleos</code> and the API endpoint previously used in LatamLink Testnet to upload the contract to the location we want with active permission to sign with the created wallet.</p>
+<p>Back in the block explorer (Bloks.io), we can verify that the account is the owner of the contract that exposes the &quot;Hello&quot; action and contains the abi information in which is specified in JSON structure the actions within the contract and associated components.</p>
+<p>Once the contract is ready, we can execute one action in the contract. With cleos&lt;/code&lt; there is a command to specify the endpoint within the LatamLink Testnet and execute the &quot;Hello&quot; action. For this example, we put as input: &quot;eoscostarica&quot;. The output of the action will be the text &quot;Hello eoscostarica&quot;.</p></p>
+<p spaces-before="0">We can verify in the blocks explorer the executed actions.</p>
+<p spaces-before="0">Is necessary to wait some seconds to complete the irreversibility of the block, since the block producers should validate the data block for this.</p>
+<p spaces-before="0">Finally, this is a sample of how you can interact with a blockchain. There are JavaScript tools, library <a href="eos-js.md">EOS JS</a> that could be implemented to execute actions in a way more programmatic to integrate with dApps, data may persist, or even execute business logic on the blockchain with this same pattern.</p>
+<p><h2 spaces-before="0">Video-Tutorial</h2></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nMivNMvS09Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/node-installation"><span class="arrow-prev">← </span><span>Node Installation</span></a><a class="docs-next button" href="/docs/en/monitor"><span>Network monitor</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#get-your-private-keys">Get your private keys</a></li><li><a href="#acquire-ram-resource">Acquire RAM resource</a></li><li><a href="#create-a-contract">Create a contract</a></li><li><a href="#publish-the-contract">Publish the Contract</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/footerlogo.png" alt="LatamLink Testnet"/></a><div><h5>Documentación</h5><a href="/docs/en/doc1.html">Como Iniciar</a><a href="/docs/en/doc2.html">Guías</a><a href="/docs/en/doc3.html">APIs</a></div><div><h5>Comunidad</h5><a href="/en/users.html">Usuarios</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://t.me/">Telegram Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>Más</h5><a href="/blog">Blog</a><a href="https://github.com/LatamLink">GitHub</a><a class="github-button" href="https://github.com/LatamLink" data-icon="octicon-star" data-count-href="/LatamLink/documentacion" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a><div class="social"><a href="https://twitter.com/EOSCostaRica" class="twitter-follow-button">Follow @EOSCostaRica</a></div></div></section><section class="copyright">Copyright © 2020 LatamLink</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'f7e83f64ca037b5315b5ccd56f79910c',
+                indexName: 'latamlink',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
